@@ -115,11 +115,15 @@ app.post("/upload", upload.single("theimage"), (req, res) => {
 
     let currDate = new Date();
 
+    const{top, left} = req.body;
+
     let data = {
         text: req.body.text,
         date: currDate.toLocaleString(),
         timestamp: currDate.getTime(),
-        positionData: req.body.positionData
+        top: req.body.top,
+        left: req.body.left,
+        positionData: 'Top: ${top}, Left: ${left}'
     };
 
     if (req.file) {
@@ -131,6 +135,8 @@ app.post("/upload", upload.single("theimage"), (req, res) => {
         res.redirect("/home");
     });
 });
+
+
 
 app.listen(2000, () => {
     console.log("server starts");

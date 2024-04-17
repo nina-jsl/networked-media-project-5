@@ -1,12 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
     const toggleButton = document.getElementById("post-icon");
     const toggleButton2 = document.getElementById("cross");
-    const toggleDiv = document.getElementById("postDiv");
-    const positionForm = document.getElementById("positionForm");
-    
-    const xPos = 0; 
-    const yPos = 0; 
-    const positionData = ""; 
+    const toggleDiv = document.getElementById("toggleDiv");
+    const postButton = document.getElementById("postButton");
 
     toggleButton.addEventListener("click", function () {
         if (toggleDiv.style.display === "none") {
@@ -25,8 +21,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     postButton.addEventListener("click", function () {
-        const newInput = document.createElement('input');
-        newInput.id = "glow";
+        const newDiv = document.createElement('div');
+        newDiv.id = "glow";
 
         // Get window dimensions
         const windowWidth = window.innerWidth;
@@ -36,21 +32,32 @@ document.addEventListener("DOMContentLoaded", function () {
         const maxPosX = windowWidth - newDiv.offsetWidth;
         const maxPosY = windowHeight - newDiv.offsetHeight;
 
-        // Generate random positions within window boundaries
-        xPos = Math.floor(Math.random() * maxPosX);
-        yPos = Math.floor(Math.random() * maxPosY);
+        const posX = Math.floor(Math.random() * maxPosX);
+        const posY = Math.floor(Math.random() * maxPosY);
+       
 
         newDiv.style.position = "absolute";
-        newDiv.style.left = xPos + 'px';
-        newDiv.style.top = yPos + "px";
+        newDiv.style.left = posX + 'px';
+        newDiv.style.top = posY + "px";
 
         toggleDiv.parentNode.appendChild(newDiv);
 
-        positionData = `x: ${xPos}, y: ${yPos}`;
+        // positionData = `x: ${xPos}, y: ${yPos}`;
     });
-
-    positionForm.addEventListener('submit', (e)=>{
-        e.preventDefault();
-    })
 });
 
+function sendPositionData(position){
+    const data = `top=${position.top}&left=${position.left}`;
+    fetch('/storePosition', {
+        method: 'POST',
+        headers:{
+            'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body:data
+    })
+    .then(response =>{
+        if (!response.ok){
+            throw new Error ('Network')
+        }
+    })
+}

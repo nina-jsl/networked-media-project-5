@@ -19,17 +19,14 @@
             <!-- <img src="../img/dust.png" class=" dust2" /> -->
             <img src="../img/layer1.png" class=" layer1" />
 
-            <div class="post-container" id = 'positionForm'>
+            <div class="post-container" id = 'toggleDiv'>
                 <img src="../icon/cross-small.png" class="icon" id = "cross">
                 <form method="POST" action="/upload" enctype="multipart/form-data">
                     <input type="text" name="text" placeholder="Say something..." class = "post-info" />
-                    <input type = "hidden" id = "divTop" name = "divTop">
-                    <input type = "hidden" id = "divLeft" name = "divLeft">
-                    <button type = "submit">Post</button>
+                    <button type = "submit" id = "postButton">Post</button>
                     <!-- <input type="submit" name="submitbutton" value="Submit"/> -->
-
                 </form>
             </div>
-            <div id="newdev-container"></div>
+
     </div>
 </body>
