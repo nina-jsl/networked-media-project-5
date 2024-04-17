@@ -30,9 +30,6 @@ let userDatabase = new nedb({
     autoload: true
 })
 
-let data = [];
-
-
 const app = express();
 app.use(express.static("public"));
 app.use(urlEncodedParser);
@@ -103,11 +100,22 @@ app.post("/authenticate", (req, res) => {
 })
 
 app.get("/home", (req, res) => {
-    let query = {};
-  database.find(query, (err, data) => {
-    res.render("home.ejs", { posts: data });
-  });
+    database.find({}, (err, data) => {
+        if (err) {
+            console.error("Error fetching data from database:", err);
+            return res.status(500).send("Internal Server Error");
+        }
+        
+        // Check if there is any data in the database
+        if (data && data.length > 0) {
+            res.render("home.ejs", { posts: data });
+        } else {
+            // If database is empty, render the view with an empty array
+            res.render("home.ejs", { posts: [] });
+        }
+    });
 });
+
 
 
 app.get("/about", (req, res) => {

@@ -19,17 +19,23 @@
             <!-- <img src="../img/dust.png" class=" dust2" /> -->
             <img src="../img/layer1.png" class=" layer1" />
 
+            <% posts.forEach(div => { %>
+                <div class="glow" style="position: absolute; left: <%= div.x %>px; top: <%= div.y %>px;"></div>
+            <% }); %>
             
-            <div class="post-container" id = 'toggleDiv'>
-                <img src="../icon/cross-small.png" class="icon" id = "cross">
+
+            
+            <div class="post-container" id="toggleDiv">
+                <img src="../icon/cross-small.png" class="icon" id="cross">
                 <form >
-                    <input type="text" name="text" placeholder="Say something..." class = "post-info" />
-                    <button type = "submit" id = "postButton">Post</button>
+                    <input type="text" name="text" placeholder="Say something..." class="post-info" />
+                    <button type="submit" id="postButton">Post</button>
                     <!-- <input type="submit" name="submitbutton" value="Submit"/> -->
                 </form>
             </div>
 
     </div>
 </body>
+
 
 <!-- method="POST" action="/upload" enctype="multipart/form-data" -->
