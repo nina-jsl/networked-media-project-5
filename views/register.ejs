@@ -1,0 +1,30 @@
+<head>
+    <title>Memory Gallery</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Are+You+Serious&display=swap" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
+</head>
+
+<body>
+    <div class="bg-container">
+        <%- include('nav1.ejs') %>
+        <img src="../img/bg.png" class=" bg-img" />
+        <img src="../img/block.png"  class=" block1" />
+        <div class = "form-container">
+            <a href = "/"><img src="../icon/cross-small.png" class = "icon"></a>
+            <form method = "POST" action = "/signup" enctype = "multipart/form-data">
+                    <p class = "login-label">username</p>
+                    <input type = "text" name = "username"  class = "login-username login-info">
+                    <p class = "login-label"> password</p>
+                    <input type = "password" name = "password" class = "login-password login-info">
+                    <input type = "submit" name = "loginbutton" value = "Register" class = "login-btn">
+                
+            </form>
+        </div>
+        
+
+       
+    </div>
+</body>

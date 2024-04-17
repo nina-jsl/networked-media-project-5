@@ -1,0 +1,372 @@
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  color: FFF9DB;
+}
+a{
+  text-decoration: none;
+ 
+}
+
+
+div.bg-container {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.parallax {
+  pointer-events: none;
+  transition: 0.45s cubic-bezier(.2, .49, .32,.99); 
+}
+
+.bg-img {
+  position: absolute;
+  width: 130%;
+  height: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -100;
+}
+
+.block1 {
+  position: absolute;
+  width: 130%;
+  height: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -99;
+}
+
+.light {
+  position: absolute;
+  width: 140%;
+  height: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -98;
+}
+
+.dust1 {
+  position: absolute;
+  width: 130%;
+  height: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transform: (-50%, -50%);
+  z-index: -97;
+}
+
+.layer3 {
+  position: absolute;
+  width: auto;
+  height: 130%;
+  top: calc(50% - 30px);
+  left: calc(50% + 380px);
+  transform: translate(-50%, -50%);
+  z-index: -90;
+}
+
+.block2 {
+  position: absolute;
+  width: 130%;
+  height: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -89;
+}
+
+.layer2 {
+  position: absolute;
+  width: auto;
+  height: 120%;
+  top: calc(50% - 30px);
+  left: calc(50% - 60px);
+  transform: translate(-50%, -50%);
+  z-index: -70;
+}
+
+.block3 {
+  position: absolute;
+  width: 130%;
+  height: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -69;
+}
+
+.dust2 {
+  position: absolute;
+  width: 130%;
+  height: 130%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -68;
+}
+
+h2.home-text {
+  position: absolute;
+  width: 100%;
+  height: 45%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: -50;
+  color: FFF9DB;
+  font-family: "Are You Serious", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 128pt;
+  pointer-events: auto;
+}
+
+.layer1 {
+  position: absolute;
+  width: 80%;
+  height: auto;
+  top: calc(50% + 180px);
+  left: calc(50% + 230px);
+  transform: translate(-50%, -50%);
+  z-index: -40;
+}
+
+
+
+.login.button{
+  position:relative; 
+  left:50%; 
+  top:75%;
+  transform: translate(-50%, -75%);
+  width: 260px;
+  height: 60px;
+  background-color: FFF9DB;
+  border-radius: 30px;
+  border-style: none;
+  z-index: 2;
+}
+
+p.login{
+  position:relative; 
+  left:50%; 
+  top:50%;
+  transform: translate(-50%, -50%);
+  font-size: 24pt; 
+  color:513529;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+}
+
+.register.button{
+  position:relative; 
+  left:50%; 
+  top:78%;
+  transform: translate(-50%, -80%);
+  width: 260px;
+  height: 60px;
+  background-color: transparent;
+  border-style: solid ;
+  border-width: 4px;
+  border-color: FFF9DB;
+  border-radius: 30px;
+  z-index: 2;
+}
+
+p.register{
+  position:relative; 
+  left:50%; 
+  top:50%;
+  transform: translate(-50%, -50%);
+  font-size: 24pt; 
+  color:FFF9DB;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+}
+
+a:hover{
+  cursor: pointer;
+}
+
+.form-container{
+  
+  position:relative; 
+  left:50%; 
+  top:50%;
+  transform: translate(-50%, -50%);
+  background-color: 532D1D;
+  opacity:90%;
+  width:35%;
+  height:75%; 
+  border-radius: 25px;
+  padding:20px; 
+}
+
+form{
+  display:flex; 
+  flex-direction: column;
+  position:absolute; 
+  left:50%; 
+  top:45%;
+  transform: translate(-50%, -50%);
+}
+
+input.login-info{
+  margin-top: 10px; 
+  padding: 10px;
+  width: 340px;
+  height: 60px;
+  background-color: transparent;
+  border-style: solid;
+  border-width: 4px;
+  border-color: FFF9DB;
+  border-radius: 30px;
+}
+
+input.login-btn{
+  position:relative;
+  left:50%;
+  transform:translateX(-50%);
+  margin-top:50px; 
+  width: 260px;
+  height: 60px;
+  background-color: FFF9DB;
+  border-radius: 30px;
+  border-style: none;
+  font-size: 24pt; 
+  color:513529;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+}
+
+p.login-label{
+  margin-top:20px; 
+  padding-left:20px; 
+  color:FFF9DB; 
+  font-size: 20px;
+  font-family:Arial, Helvetica, sans-serif;
+  text-transform: capitalize;
+}
+
+img.icon{
+  position:relative; 
+  width:8%;
+  left:98%;
+  transform:translateX(-80%);
+}
+
+ul.nav{
+  display:flex; 
+  flex-direction:row;
+  justify-content: space-around;
+  position:relative; 
+  width:40%;
+  left:92%;
+  transform:translate(-80%);
+}
+
+li.nav{
+  margin-top: 30px; 
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20pt;
+  text-transform: capitalize;
+}
+
+ul.nav2{
+  display:flex; 
+  flex-direction:row;
+  justify-content: space-around;
+  position:relative; 
+  width:70%;
+  left:85%;
+  transform:translate(-80%);
+}
+
+li.nav2{
+  margin-top: 30px; 
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20pt;
+  /* margin-right:20px; 
+  position:relative; 
+  left:80%; 
+  transform: translate(-80%); */
+  text-transform: capitalize;
+}
+
+img.nav2.icon{
+  width:5%; 
+
+}
+
+#glow{
+  position: relative; 
+  /* left: 80%;
+  top: 30%;
+  transform: translate(-80%, -50%); */
+  height:100px; 
+  width:100px; 
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: FFF9DB;
+  box-shadow:
+    0 0 20px 10px #FFF9DB,  
+    0 0 30px 20px #FFF9DB, /* middle magenta */
+    0 0 40px 30px #EABA72; /* outer cyan */
+  z-index: 1; 
+}
+
+.post-container{
+  position:relative; 
+  left:50%; 
+  top:42%;
+  transform: translate(-50%, -50%);
+  background-color: 532D1D;
+  opacity:90%;
+  width:35%;
+  height:75%; 
+  border-radius: 25px;
+  padding:20px; 
+  z-index: 5; 
+}
+
+#post-icon{
+  cursor: pointer; 
+}
+
+#postDiv{
+  display:none;
+}
+
+.related-div{
+  display:none; 
+  position:relative; 
+  left:50%; 
+  top:42%;
+  transform: translate(-50%, -50%);
+  background-color: 532D1D;
+  opacity:90%;
+  width:35%;
+  height:75%; 
+  border-radius: 25px;
+  padding:20px; 
+  z-index: 5; 
+}
+
+#cross{
+  cursor: pointer;
+}

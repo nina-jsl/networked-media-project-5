@@ -1,0 +1,32 @@
+<head>
+    <title>Memory Gallery</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
+    <script src="dot.js"></script>
+</head>
+
+<body>
+    <div class="bg-container">
+        <%- include('nav2.ejs') %>
+            <img src="../img/bg.png" class=" bg-img" />
+            <img src="../img/block.png" class=" block1" />
+            <img src="../img/light.png" class="light" />
+            <!-- <img src="../img/dust1.png" class=" dust1" /> -->
+            <img src="../img/layer3.png" class=" layer3" />
+            <img src="../img/block.png" class=" block2" />
+            <img src="../img/layer2.png" class=" layer2" />
+            <img src="../img/block.png" class=" block3" />
+            <!-- <img src="../img/dust.png" class=" dust2" /> -->
+            <img src="../img/layer1.png" class=" layer1" />
+
+            <div class="post-container" id = 'postDiv'>
+                <img src="../icon/cross-small.png" class="icon" id = "cross">
+                <form method="POST" action="/upload" enctype="multipart/form-data">
+                    <input type="text" name="text" placeholder="Say something..." class = "post-info" />
+                    <input type="submit" name="submitbutton" value="Submit" id = "post-submit" />
+                    <input type = "positionData" name = "positionData">
+                </form>
+            </div>
+            <div id="newdev-container"></div>
+    </div>
+</body>
