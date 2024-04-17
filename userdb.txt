@@ -1,1 +1,2 @@
 {"username":"nina","password":"$2b$10$PX3yBAzJyvV2Spm0jtsgquGnGWw1yZSCjhj1XqFEN7Ko5j2fAekry","_id":"ojzQyfK9yKXcXlV5"}
+{"username":"susan","password":"$2b$10$c2hxr1iC0k9eJr4/m6CpueeZAwhNMVeX1nnH1WKNwA4ODXejxxylK","_id":"qD96GtDAgkvmNYh9"}
