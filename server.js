@@ -30,6 +30,9 @@ let userDatabase = new nedb({
     autoload: true
 })
 
+let data = [];
+
+
 const app = express();
 app.use(express.static("public"));
 app.use(urlEncodedParser);
@@ -101,10 +104,11 @@ app.post("/authenticate", (req, res) => {
 
 app.get("/home", (req, res) => {
     let query = {};
-    database.find(query, (err, data) => {
-        res.render("home.ejs", { posts: data });
-    });
-})
+  database.find(query, (err, data) => {
+    res.render("home.ejs", { posts: data });
+  });
+});
+
 
 app.get("/about", (req, res) => {
     res.render("about.ejs")
@@ -115,15 +119,12 @@ app.post("/upload", upload.single("theimage"), (req, res) => {
 
     let currDate = new Date();
 
-    const{top, left} = req.body;
-
     let data = {
         text: req.body.text,
         date: currDate.toLocaleString(),
         timestamp: currDate.getTime(),
-        top: req.body.top,
-        left: req.body.left,
-        positionData: 'Top: ${top}, Left: ${left}'
+        x: req.body.x,
+        y: req.body.y
     };
 
     if (req.file) {
@@ -135,6 +136,7 @@ app.post("/upload", upload.single("theimage"), (req, res) => {
         res.redirect("/home");
     });
 });
+
 
 
 

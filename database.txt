@@ -1,3 +1,2 @@
-{"text":"","date":"4/17/2024, 11:37:52 AM","timestamp":1713368272355,"positionData":"Top: ${top}, Left: ${left}","_id":"SlowpBoxJiETEwEw"}
-{"text":"","date":"4/17/2024, 11:37:58 AM","timestamp":1713368278069,"positionData":"Top: ${top}, Left: ${left}","_id":"abC25hEYhhPzaQEQ"}
-{"text":"","date":"4/17/2024, 11:41:19 AM","timestamp":1713368479754,"positionData":"Top: ${top}, Left: ${left}","_id":"oaHtnujSu89qLuRO"}
+
+{"text":"","date":"4/17/2024, 12:17:17 PM","timestamp":1713370637428,"x":"990","y":"574","_id":"7OgldMoODlOyiTD9"}
