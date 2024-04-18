@@ -22,7 +22,7 @@ const upload = multer({
 
 const nedbSessionInit = nedbSessionStore({
     connect: expressSession,
-    filename: 'sessions.txt'
+    // filename: 'sessions.txt'
 })
 
 let userDatabase = new nedb({

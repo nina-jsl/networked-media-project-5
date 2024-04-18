@@ -8,9 +8,13 @@
   color: FFF9DB;
 }
 
+body{
+  cursor: none; 
+}
+
 a {
   text-decoration: none;
-
+  cursor: none; 
 }
 
 
@@ -169,6 +173,7 @@ p.login {
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
   text-transform: uppercase;
+  cursor:none; 
 }
 
 .register.button {
@@ -196,6 +201,7 @@ p.register {
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
   text-transform: uppercase;
+  cursor:none; 
 }
 
 a:hover {
@@ -234,6 +240,7 @@ input.login-info {
   border-width: 4px;
   border-color: FFF9DB;
   border-radius: 30px;
+  cursor:none; 
 }
 
 input.login-btn {
@@ -251,6 +258,7 @@ input.login-btn {
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
   text-transform: uppercase;
+  cursor:none; 
 }
 
 p.login-label {
@@ -267,6 +275,7 @@ img.icon {
   width: 8%;
   left: 98%;
   transform: translateX(-80%);
+  cursor:none; 
 }
 
 ul.nav {
@@ -286,6 +295,10 @@ li.nav {
   text-transform: capitalize;
 }
 
+.nav2{
+  cursor: none; 
+}
+
 ul.nav2 {
   display: flex;
   flex-direction: row;
@@ -297,6 +310,7 @@ ul.nav2 {
 }
 
 li.nav2 {
+  display:inline-block;
   margin-top: 30px;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 24px;
@@ -305,6 +319,7 @@ li.nav2 {
   left:80%; 
   transform: translate(-80%); */
   text-transform: capitalize;
+  cursor:none; 
 }
 
 img.nav2.icon {
@@ -324,13 +339,8 @@ img.nav2.icon {
 
 .glow {
   position: relative;
-  /* left: 80%;
-  top: 30%;
-  transform: translate(-80%, -50%); */
-  height: 100px;
-  width: 100px;
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
   border-radius: 50%;
   background-color: FFF9DB;
   box-shadow:
@@ -372,7 +382,7 @@ img.nav2.icon {
 }
 
 #post-icon {
-  cursor: pointer;
+  cursor: none;
 }
 
 #toggleDiv {
@@ -395,11 +405,11 @@ img.nav2.icon {
 }
 
 #cross {
-  cursor: pointer;
+  cursor: none;
 }
 
 .cross2 {
-  cursor: pointer;
+  cursor: none;
 }
 
 .post-container {
@@ -476,13 +486,70 @@ button#postButton {
   font-size: 24pt;
   font-family:Arial, Helvetica, sans-serif;
   text-transform: uppercase;
+  cursor:none; 
 }
 
 
-#music-player-container iframe {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    border: none;
-    overflow: hidden;
+.cursor {
+  z-index: 999; 
+  position: fixed; 
+  left:50%; 
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px; 
+  height: 20px; 
+  border-radius: 50%;
+  pointer-events: none;
+  background-color: rgba(255,249,219, 0.8);
+  box-shadow: 0 0 20px rgba(255,249,219, 0.8),
+              0 0 60px rgba(255,249,219, 0.8),
+              0 0 100px rgba(255,249,219, 0.6
+  );
+}
+
+.cursor:before {
+  content: '';
+  position: absolute; 
+  background: rgba(255,249,219, 0.8); 
+  width: 50px; 
+  height: 50px; 
+  opacity: 0.2; 
+  border-radius: 50%; 
+  transform: translate(-30%, -30%);
+  z-index: 90; 
+}
+
+h1.about{
+  position:absolute; 
+  left: 50%; 
+  top: 10%;
+  transform: translate(-50%, -30%);
+  /* margin: auto;  */
+  z-index: 5; 
+}
+
+p.about-text{
+  position: absolute; 
+  left: 50%;
+  top: 45%; 
+  transform: translate(-50%, -50%);
+  /* height:60%;  */
+  width:80%; 
+  z-index:5; 
+  /* margin: auto;  */
+}
+
+.about-container {
+  display:none; 
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: 532D1D;
+  opacity: 90%;
+  width: 35%;
+  height: 75%;
+  border-radius: 25px;
+  padding: 20px;
+  z-index: 5; 
 }

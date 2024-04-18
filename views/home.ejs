@@ -3,48 +3,79 @@
     <link rel="stylesheet" href="style.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
     <script src="dot.js"></script>
-    <div id="music-player-container">
-        <iframe src="/music" frameborder="0"></iframe>
-    </div>
+    <script src="cursor.js"></script>
 
 </head>
 
 <body>
     <div class="bg-container">
-        <!-- <%- include('music.ejs') %> -->
         <%- include('nav2.ejs') %>
-        <img src="../img/bg.png" class="bg-img" />
-        <img src="../img/block.png" class="block1" />
-        <img src="../img/light.png" class="light" />
-        <!-- <img src="../img/dust1.png" class=" dust1" /> -->
-        <img src="../img/layer3.png" class="layer3" />
-        <img src="../img/block.png" class="block2" />
-        <img src="../img/layer2.png" class="layer2" />
-        <img src="../img/block.png" class="block3" />
-        <!-- <img src="../img/dust.png" class=" dust2" /> -->
-        <img src="../img/layer1.png" class="layer1" id = "layer1" />
+            <div class="cursor"></div>
 
-        <% if (posts.length> 0) { %>
-            <% posts.forEach(div=> { %>
-                <div class="glow" style="position: absolute; left: <%= div.x %>px; top: <%= div.y %>px;"></div>
-                <div class="post-container">
-                    <img src="../icon/cross-small.png" class="icon cross2">
-                    <h1 class="post">Memory Information</h1>
-                    <p class="post">
-                        <%= div.text %>
-                    </p>
-                </div>
-                <% }); %>
-                    <% } %>
+            <img src="../img/bg.png" class="bg-img" />
+            <img src="../img/block.png" class="block1" />
+            <img src="../img/light.png" class="light" />
+            <!-- <img src="../img/dust1.png" class=" dust1" /> -->
+            <img src="../img/layer3.png" class="layer3" />
+            <img src="../img/block.png" class="block2" />
+            <img src="../img/layer2.png" class="layer2" />
+            <img src="../img/block.png" class="block3" />
+            <!-- <img src="../img/dust.png" class=" dust2" /> -->
+            <img src="../img/layer1.png" class="layer1" id="layer1" />
 
-        <div class="form-container" id="toggleDiv">
-            <img src="../icon/cross-small.png" class="icon" id="cross">
-            <form class = "post">
-                <input type="text" name="text" placeholder="Say something..." class="post-info" />
-                <button type="submit" id="postButton">Post</button>
-                <!-- <input type="submit" name="submitbutton" value="Submit"/> -->
-            </form>
-        </div>
+            <% if (posts.length> 0) { %>
+                <% posts.forEach(div=> { %>
+                    <div class="glow" style="position: absolute; left: <%= div.x %>px; top: <%= div.y %>px;"></div>
+                    <div class="post-container">
+                        <img src="../icon/cross-small.png" class="icon cross2">
+                        <h1 class="post">Memory Information</h1>
+                        <p class="post">
+                            <%= div.text %>
+                        </p>
+                    </div>
+                    <% }); %>
+                        <% } %>
+
+                            <div class="about-container">
+                                <img src="../icon/cross-small.png" class="icon" id="about-cross">
+                                <h1 class="about">About</h1>
+                                <p class="about-text">Welcome to the “Memory Gallery,” nestled in the cozy confines of
+                                    an antique store.
+                                    This gallery is not only a place for storing unused, old, or used items, but also a
+                                    sanctuary for
+                                    memories. Imagine our gallery as a vast expanse, illuminated by tiny light balls
+                                    that dance and
+                                    shimmer in the environment. Each light ball represents a memory post, waiting to be
+                                    discovered and
+                                    relived. By clicking on these luminous orbs, users can delve into their memories,
+                                    transported to
+                                    moments of joy, nostalgia, and reflection.
+
+                                    In this unique space, memories are living entities represented by moving “light
+                                    balls” in the
+                                    environment. Each bulb serves as a vessel for cherished moments in your personal
+                                    history. A “light
+                                    balls” is created upon submitting your very own memory after clicking on the post
+                                    icon located at
+                                    the upper right corner. You can access your posted memory by pressing the
+                                    corresponding memory
+                                    balls.
+
+                                    Join us in this journey through the corridors of time, where every click unlocks a
+                                    new chapter in
+                                    the story of your life. Welcome to our Memory Gallery, where the past comes alive in
+                                    a symphony of
+                                    light and reminiscence.</p>
+                            </div>
+
+                            <div class="form-container" id="toggleDiv">
+                                <img src="../icon/cross-small.png" class="icon" id="cross">
+                                <form class="post">
+                                    <input type="text" name="text" placeholder="Say something..." class="post-info" />
+                                    <button type="submit" id="postButton">Post</button>
+                                    <!-- <input type="submit" name="submitbutton" value="Submit"/> -->
+                                </form>
+                            </div>
     </div>
 </body>
 

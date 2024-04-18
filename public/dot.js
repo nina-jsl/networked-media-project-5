@@ -5,6 +5,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const toggleDiv = document.getElementById("toggleDiv");
     const postButton = document.getElementById("postButton");
     const glowList = document.querySelectorAll(".glow");
+    const aboutCross = document.getElementById("about-cross");
+    const aboutContainer = document.querySelector(".about-container");
+    const about = document.getElementById("about");
     
     if (glowList.length > 0) {
         glowList.forEach(function (glow) {
@@ -63,6 +66,26 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             });
         });
+    }
+    
+    if (aboutCross){
+        aboutCross.addEventListener("click", function(){
+            if (aboutContainer.style.display ==="none"){
+                aboutContainer.style.display = "block";
+            } else {
+                aboutContainer.style.display = "none";
+            }
+        })
+    }
+
+    if (about){
+        aboutCross.addEventListener("click", function(){
+            if (aboutContainer.style.display ==="none"){
+                aboutContainer.style.display = "block";
+            } else {
+                aboutContainer.style.display = "none";
+            }
+        })
     }
 
     if (postButton) {

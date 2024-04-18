@@ -1,2 +1,3 @@
-{"username":"nina","password":"$2b$10$PX3yBAzJyvV2Spm0jtsgquGnGWw1yZSCjhj1XqFEN7Ko5j2fAekry","_id":"ojzQyfK9yKXcXlV5"}
+{"username":"claire","password":"$2b$10$UW6.MD1S2LFCszux4AOT6eR1RE7N5RLkqZT0BplvRpkYkzJk91Lui","_id":"0mUsMiEu5SA1ZJHg"}
 {"username":"User","password":"$2b$10$yMgDtSPXeApOGqq/cm3L6.GLEVM4eCzxGfymPzp3YAu/4qDItA0dy","_id":"Y20EEHbjFHD3Idpj"}
+{"username":"nina","password":"$2b$10$PX3yBAzJyvV2Spm0jtsgquGnGWw1yZSCjhj1XqFEN7Ko5j2fAekry","_id":"ojzQyfK9yKXcXlV5"}
