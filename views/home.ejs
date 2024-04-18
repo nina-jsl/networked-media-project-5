@@ -3,39 +3,51 @@
     <link rel="stylesheet" href="style.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
     <script src="dot.js"></script>
+    <div id="music-player-container">
+        <iframe src="/music" frameborder="0"></iframe>
+    </div>
+
 </head>
 
 <body>
     <div class="bg-container">
+        <!-- <%- include('music.ejs') %> -->
         <%- include('nav2.ejs') %>
-            <img src="../img/bg.png" class=" bg-img" />
-            <img src="../img/block.png" class=" block1" />
-            <img src="../img/light.png" class="light" />
-            <!-- <img src="../img/dust1.png" class=" dust1" /> -->
-            <img src="../img/layer3.png" class=" layer3" />
-            <img src="../img/block.png" class=" block2" />
-            <img src="../img/layer2.png" class=" layer2" />
-            <img src="../img/block.png" class=" block3" />
-            <!-- <img src="../img/dust.png" class=" dust2" /> -->
-            <img src="../img/layer1.png" class=" layer1" />
+        <img src="../img/bg.png" class="bg-img" />
+        <img src="../img/block.png" class="block1" />
+        <img src="../img/light.png" class="light" />
+        <!-- <img src="../img/dust1.png" class=" dust1" /> -->
+        <img src="../img/layer3.png" class="layer3" />
+        <img src="../img/block.png" class="block2" />
+        <img src="../img/layer2.png" class="layer2" />
+        <img src="../img/block.png" class="block3" />
+        <!-- <img src="../img/dust.png" class=" dust2" /> -->
+        <img src="../img/layer1.png" class="layer1" id = "layer1" />
 
-            <% posts.forEach(div => { %>
+        <% if (posts.length> 0) { %>
+            <% posts.forEach(div=> { %>
                 <div class="glow" style="position: absolute; left: <%= div.x %>px; top: <%= div.y %>px;"></div>
-            <% }); %>
-            
+                <div class="post-container">
+                    <img src="../icon/cross-small.png" class="icon cross2">
+                    <h1 class="post">Memory Information</h1>
+                    <p class="post">
+                        <%= div.text %>
+                    </p>
+                </div>
+                <% }); %>
+                    <% } %>
 
-            
-            <div class="post-container" id="toggleDiv">
-                <img src="../icon/cross-small.png" class="icon" id="cross">
-                <form >
-                    <input type="text" name="text" placeholder="Say something..." class="post-info" />
-                    <button type="submit" id="postButton">Post</button>
-                    <!-- <input type="submit" name="submitbutton" value="Submit"/> -->
-                </form>
-            </div>
-
+        <div class="form-container" id="toggleDiv">
+            <img src="../icon/cross-small.png" class="icon" id="cross">
+            <form class = "post">
+                <input type="text" name="text" placeholder="Say something..." class="post-info" />
+                <button type="submit" id="postButton">Post</button>
+                <!-- <input type="submit" name="submitbutton" value="Submit"/> -->
+            </form>
+        </div>
     </div>
 </body>
+
 
 
 <!-- method="POST" action="/upload" enctype="multipart/form-data" -->

@@ -63,7 +63,7 @@ app.post("/signup", upload.single('profilePicture'), (req, res) => {
     }
     userDatabase.insert(data, (err, dataInserted) => {
         console.log(dataInserted),
-            res.redirect('/login')
+            res.redirect('/')
     })
 })
 
@@ -100,18 +100,18 @@ app.post("/authenticate", (req, res) => {
 })
 
 app.get("/home", (req, res) => {
-    database.find({}, (err, data) => {
+    let query = { username: req.session.loggedInUser }; 
+    database.find(query, (err, data) => {
         if (err) {
-            console.error("Error fetching data from database:", err);
-            return res.status(500).send("Internal Server Error");
-        }
-        
-        // Check if there is any data in the database
-        if (data && data.length > 0) {
-            res.render("home.ejs", { posts: data });
+            console.error("Error fetching data:", err);
+            res.status(500).send("Error fetching data");
         } else {
-            // If database is empty, render the view with an empty array
-            res.render("home.ejs", { posts: [] });
+            if (data.length === 0) {
+                res.render("home.ejs", { posts: data })
+            } else {
+                // Database has data, render the home template with the posts
+                res.render("home.ejs", { posts: data });
+            }
         }
     });
 });
@@ -128,6 +128,7 @@ app.post("/upload", upload.single("theimage"), (req, res) => {
     let currDate = new Date();
 
     let data = {
+        username: req.session.loggedInUser, // Associate div with the logged-in user
         text: req.body.text,
         date: currDate.toLocaleString(),
         timestamp: currDate.getTime(),
@@ -140,9 +141,18 @@ app.post("/upload", upload.single("theimage"), (req, res) => {
     }
 
     database.insert(data, (err, newData) => {
-        console.log(newData);
-        res.redirect("/home");
+        if (err) {
+            console.error("Error inserting data:", err);
+            res.status(500).send("Error inserting data");
+        } else {
+            console.log("Data inserted successfully:", newData);
+            res.redirect("/home");
+        }
     });
+});
+
+app.get('/music-player', (req, res) => {
+    res.render('music-player');
 });
 
 
