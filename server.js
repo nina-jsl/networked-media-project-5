@@ -63,7 +63,7 @@ app.post("/signup", upload.single('profilePicture'), (req, res) => {
     }
     userDatabase.insert(data, (err, dataInserted) => {
         console.log(dataInserted),
-            res.redirect('/')
+            res.redirect('/login')
     })
 })
 
@@ -109,12 +109,18 @@ app.get("/home", (req, res) => {
             if (data.length === 0) {
                 res.render("home.ejs", { posts: data })
             } else {
-                // Database has data, render the home template with the posts
-                res.render("home.ejs", { posts: data });
+                // Check if the about container should be displayed
+                if (req.session.showAbout) {
+                    req.session.showAbout = false; // Reset the flag
+                    res.render("home.ejs", { posts: data, showAbout: true });
+                } else {
+                    res.render("home.ejs", { posts: data, showAbout: false });
+                }
             }
         }
     });
 });
+
 
 
 

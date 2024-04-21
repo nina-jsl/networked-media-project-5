@@ -278,6 +278,23 @@ img.icon {
   cursor:none; 
 }
 
+/* img.icon:hover{
+  z-index: 999; 
+  position: fixed; 
+  left:50%; 
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px; 
+  height: 20px; 
+  border-radius: 50%;
+  pointer-events: none;
+  background-color: rgba(255,0,0, 0.8);
+  box-shadow: 0 0 20px rgba(255,0,0, 0.8),
+              0 0 60px rgba(255,0,0, 0.8),
+              0 0 100px rgba(255,0,0, 0.6
+  );
+} */
+
 ul.nav {
   display: flex;
   flex-direction: row;
@@ -339,6 +356,8 @@ img.nav2.icon {
 
 .glow {
   position: relative;
+  /* width: var(--randomSize);
+  height: var(--randomSize); */
   width: 35px;
   height: 35px;
   border-radius: 50%;
@@ -350,7 +369,7 @@ img.nav2.icon {
     0 0 40px 30px #EABA72;
   /* outer cyan */
   z-index: 1;
-  animation: moveGlow 5s infinite alternate;
+  animation: moveGlow 8s infinite alternate;
 }
 
 .post-container {
@@ -519,10 +538,12 @@ button#postButton {
   z-index: 90; 
 }
 
+
+
 h1.about{
   position:absolute; 
   left: 50%; 
-  top: 10%;
+  top: 12%;
   transform: translate(-50%, -30%);
   /* margin: auto;  */
   z-index: 5; 
@@ -531,7 +552,7 @@ h1.about{
 p.about-text{
   position: absolute; 
   left: 50%;
-  top: 45%; 
+  top: 50%; 
   transform: translate(-50%, -50%);
   /* height:60%;  */
   width:80%; 
@@ -540,7 +561,7 @@ p.about-text{
 }
 
 .about-container {
-  display:none; 
+  /* display:none;  */
   position: relative;
   left: 50%;
   top: 50%;

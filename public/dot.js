@@ -8,16 +8,23 @@ document.addEventListener("DOMContentLoaded", function () {
     const aboutCross = document.getElementById("about-cross");
     const aboutContainer = document.querySelector(".about-container");
     const about = document.getElementById("about");
+
+    if (aboutContainer.style.display === "block") {
+        aboutContainer.style.display = "none";
+    }
     
     if (glowList.length > 0) {
         glowList.forEach(function (glow) {
             const maxX = 150; 
             const maxY = 150;
-            const randomX = Math.random()*maxX*2 - maxX; 
-            const randomY = Math.random()*maxY*2 - maxY; 
+            const randomX = Math.random() * (2 * maxX) - maxX; 
+            const randomY = Math.random() * (maxY * 2) - maxY; 
+            const randomSize = Math.random() * 20 + 20;
+
 
             glow.style.setProperty("--random-x", randomX + "px");
             glow.style.setProperty("--random-y", randomY + "px");
+            glow.style.setProperty("--randomSize", randomSize + "px");
             
             glow.addEventListener("click", function () {
                 console.log("glow clicked");
@@ -70,6 +77,7 @@ document.addEventListener("DOMContentLoaded", function () {
     
     if (aboutCross){
         aboutCross.addEventListener("click", function(){
+            console.log("about cross clicked");
             if (aboutContainer.style.display ==="none"){
                 aboutContainer.style.display = "block";
             } else {
@@ -79,7 +87,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     if (about){
-        aboutCross.addEventListener("click", function(){
+        about.addEventListener("click", function(){
             if (aboutContainer.style.display ==="none"){
                 aboutContainer.style.display = "block";
             } else {
@@ -90,6 +98,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (postButton) {
         postButton.addEventListener("click", function () {
+            console.log(aboutContainer.style.display)
             const textInput = document.querySelector('.post-info');
             console.log('Input Element:', textInput);
 
@@ -98,13 +107,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
             const newDiv = document.createElement('div');
             newDiv.className = "glow";
-            newDiv.textContent = textValue; // Set the text content of the new div
+            newDiv.textContent = textValue; 
 
             const windowWidth = window.innerWidth;
             const windowHeight = window.innerHeight;
 
-            const maxPosX = windowWidth - newDiv.offsetWidth;
-            const maxPosY = windowHeight - newDiv.offsetHeight;
+            const maxPosX = 0.8* windowWidth;
+            const maxPosY = 0.8*windowHeight;
 
             const posX = Math.floor(Math.random() * maxPosX);
             const posY = Math.floor(Math.random() * maxPosY);
@@ -133,32 +142,28 @@ document.addEventListener("DOMContentLoaded", function () {
                 console.error('Error: ', error);
             });
 
-            // Create a new post container
+            aboutContainer.style.display = "none";
+
             const newPostContainer = document.createElement('div');
             newPostContainer.className = 'post-container';
 
-            // Create and append cross icon
             const crossIcon = document.createElement('img');
             crossIcon.src = "../icon/cross-small.png";
             crossIcon.className = "icon cross2";
             newPostContainer.appendChild(crossIcon);
 
-            // Create and append h1 element
             const heading = document.createElement('h1');
             heading.className = 'post';
             heading.textContent = 'Memory Information';
             newPostContainer.appendChild(heading);
 
-            // Create and append p element with text value
             const paragraph = document.createElement('p');
             paragraph.className = 'post';
             paragraph.textContent = textValue;
             newPostContainer.appendChild(paragraph);
 
-            // Append the new post container to the DOM
             toggleDiv.parentNode.appendChild(newPostContainer);
 
-            // Hide all post containers
             const postContainers = document.querySelectorAll(".post-container");
             postContainers.forEach(function (postContainer) {
                 postContainer.style.display = "none";
