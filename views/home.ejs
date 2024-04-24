@@ -7,6 +7,9 @@
 
 </head>
 
+
+
+
 <body>
     <div class="bg-container">
         <%- include('nav2.ejs') %>
@@ -23,6 +26,9 @@
             <!-- <img src="../img/dust.png" class=" dust2" /> -->
             <img src="../img/layer1.png" class="layer1" id="layer1" />
 
+
+
+
             <% if (posts.length> 0) { %>
                 <% posts.forEach(div=> { %>
                     <div class="glow" style="position: absolute; left: <%= div.x %>px; top: <%= div.y %>px;"></div>
@@ -33,37 +39,44 @@
                             <%= div.text %>
                         </p>
                     </div>
-                    <% }); %>
-                        <% } %>
+                   
+                <% }); %>
+            <% } %>
 
-                            <div class="about-container">
-                                <img src="../icon/cross-small.png" class="icon" id="about-cross">
-                                <h1 class="about">About</h1>
-                                <p class="about-text">Welcome to the “Memory Gallery.” Nestled in the cozy confines of
-                                    an antique store, this gallery is not only a place for storing unused items, but
-                                    also a sanctuary for memories. Imagine our gallery as a vast expanse, illuminated by
-                                    tiny light balls that dance and shimmer in the environment. Each light ball
-                                    represents a memory post, waiting to be discovered and relived. By clicking on these
-                                    luminous orbs, users can delve into their memories, transported to moments of joy,
-                                    nostalgia, and reflection. <br><br>
+            <% if (showAbout == "true"){ %>
+                <div class="about-container" style = "display: block">
+                    <img src="../icon/cross-small.png" class="icon" id="about-cross">
+                    <h1 class="about">About</h1>
+                    <p class="about-text">Welcome to the “Memory Gallery.” Nestled in the cozy confines of
+                        an antique store, this gallery is not only a place for storing unused items, but
+                        also a sanctuary for memories. Imagine our gallery as a vast expanse, illuminated by
+                        tiny light balls that dance and shimmer in the environment. Each light ball
+                        represents a memory post, waiting to be discovered and relived. By clicking on these
+                        luminous orbs, users can delve into their memories, transported to moments of joy,
+                        nostalgia, and reflection. <br><br>
+        
+                        To create your memory ball, please follow these steps: <br><br>
+        
+                        1. Click the icon located at the upper right corner<br>
+                        2. Record your memory/story<br>
+                        3. Click the “POST” button to generate your memory post. A new glowing ball will be
+                        randomly generated in the environment. <br>
+                        4. Click on any of the moving balls to access your memory post</p>
+                </div>
+            <% } %>
+    
+           
 
-                                    To create your memory ball, please follow these steps: <br><br>
+       
 
-                                    1. Click the icon located at the upper right corner<br>
-                                    2. Record your memory/story<br>
-                                    3. Click the “POST” button to generate your memory post. A new glowing ball will be
-                                    randomly generated in the environment. <br>
-                                    4. Click on any of the moving balls to access your memory post</p>
-                            </div>
-
-                            <div class="form-container" id="toggleDiv">
-                                <img src="../icon/cross-small.png" class="icon" id="cross">
-                                <form class="post">
-                                    <input type="text" name="text" placeholder="Say something..." class="post-info" />
-                                    <button type="submit" id="postButton">Post</button>
-                                    <!-- <input type="submit" name="submitbutton" value="Submit"/> -->
-                                </form>
-                            </div>
+        <div class="form-container" id="toggleDiv">
+            <img src="../icon/cross-small.png" class="icon" id="cross">
+            <form class="post">
+                <input type="text" name="text" placeholder="Say something..." class="post-info" />
+                <button type="submit" id="postButton">Post</button>
+                <!-- <input type="submit" name="submitbutton" value="Submit"/> -->
+            </form>
+        </div>
     </div>
 </body>
 

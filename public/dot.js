@@ -9,9 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const aboutContainer = document.querySelector(".about-container");
     const about = document.getElementById("about");
 
-    if (aboutContainer.style.display === "block") {
-        aboutContainer.style.display = "none";
-    }
+
     
     if (glowList.length > 0) {
         glowList.forEach(function (glow) {
@@ -115,8 +113,11 @@ document.addEventListener("DOMContentLoaded", function () {
             const maxPosX = 0.8* windowWidth;
             const maxPosY = 0.8*windowHeight;
 
-            const posX = Math.floor(Math.random() * maxPosX);
-            const posY = Math.floor(Math.random() * maxPosY);
+            const minPosX = 0.2* windowWidth;
+            const minPosY = 0.2*windowHeight;
+
+            const posX = Math.floor(Math.random() * maxPosX) + minPosX;
+            const posY = Math.floor(Math.random() * maxPosY) + minPosY;
 
             newDiv.style.position = "absolute";
             newDiv.style.left = posX + 'px';
@@ -124,10 +125,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
             toggleDiv.parentNode.appendChild(newDiv);
 
+
             const formData = new FormData();
             formData.append('x', posX);
             formData.append('y', posY);
-            formData.append('theimage', ''); 
             console.log('Text Value:', textValue);
             formData.append('text', textValue);
 

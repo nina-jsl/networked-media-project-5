@@ -22,7 +22,7 @@ const upload = multer({
 
 const nedbSessionInit = nedbSessionStore({
     connect: expressSession,
-    // filename: 'sessions.txt'
+    filename: 'sessions.txt'
 })
 
 let userDatabase = new nedb({
@@ -90,8 +90,9 @@ app.post("/authenticate", (req, res) => {
             if (result) {
                 let session = req.session;
                 session.loggedInUser = attemptLogin.username;
+
                 console.log("successful login");
-                res.redirect("/home");
+                res.redirect("/home?showAbout=true");
             } else {
                 res.redirect("/");
             }
@@ -100,24 +101,18 @@ app.post("/authenticate", (req, res) => {
 })
 
 app.get("/home", (req, res) => {
-    let query = { username: req.session.loggedInUser }; 
-    database.find(query, (err, data) => {
+    
+    if (!req.session.loggedInUser) {
+        return res.redirect("/login");
+    }
+    database.find({ username: req.session.loggedInUser }, (err, data) => {
         if (err) {
             console.error("Error fetching data:", err);
-            res.status(500).send("Error fetching data");
-        } else {
-            if (data.length === 0) {
-                res.render("home.ejs", { posts: data })
-            } else {
-                // Check if the about container should be displayed
-                if (req.session.showAbout) {
-                    req.session.showAbout = false; // Reset the flag
-                    res.render("home.ejs", { posts: data, showAbout: true });
-                } else {
-                    res.render("home.ejs", { posts: data, showAbout: false });
-                }
-            }
+            return res.status(500).send("Error fetching data");
         }
+        
+        res.render("home.ejs", { posts: data, showAbout: req.query.showAbout });
+        req.body.showAbout = false;
     });
 });
 
@@ -139,7 +134,8 @@ app.post("/upload", upload.single("theimage"), (req, res) => {
         date: currDate.toLocaleString(),
         timestamp: currDate.getTime(),
         x: req.body.x,
-        y: req.body.y
+        y: req.body.y,
+        showAbout: req.body.showAbout
     };
 
     if (req.file) {
@@ -151,8 +147,9 @@ app.post("/upload", upload.single("theimage"), (req, res) => {
             console.error("Error inserting data:", err);
             res.status(500).send("Error inserting data");
         } else {
-            console.log("Data inserted successfully:", newData);
-            res.redirect("/home");
+            // console.log("Data inserted successfully:", newData);
+            res.redirect("/home?showAbout=false");
+            
         }
     });
 });

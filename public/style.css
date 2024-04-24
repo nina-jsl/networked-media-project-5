@@ -204,9 +204,7 @@ p.register {
   cursor:none; 
 }
 
-a:hover {
-  cursor: pointer;
-}
+
 
 .form-container {
   position: relative;
@@ -538,7 +536,22 @@ button#postButton {
   z-index: 90; 
 }
 
-
+.custom-cursor{
+  z-index: 999; 
+  position: fixed; 
+  left:50%; 
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px; 
+  height: 20px; 
+  border-radius: 50%;
+  pointer-events: none;
+  background-color: rgba(203, 232, 150, 0.8);
+  box-shadow: 0 0 20px rgba(203, 232, 150, 0.8),
+              0 0 60px rgba(203, 232, 150, 0.8),
+              0 0 100px rgba(203, 232, 150, 0.6)
+  
+}
 
 h1.about{
   position:absolute; 
