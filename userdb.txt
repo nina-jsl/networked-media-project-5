@@ -1,2 +1,3 @@
+{"username":"susan","password":"$2b$10$Kap4wEXX2lZlTnnYwxTZo.UGZUdJGWK0AYcyaN.zLwK9tHMs0nx7K","_id":"3k7lSTmjN8DM0bFE"}
 {"username":"nina","password":"$2b$10$zxXAv.ADoPlfw3LMyoCWtOZiVcoT2rdzJrXxP.Nmi7IDlRXEvCHKW","_id":"NB7agW9pyEVHKI2s"}
 {"username":"1","password":"$2b$10$U.uWnyLqUUrPLtIo6N2pAOjFa26nZoMkjS1MMId99JPorHe/RsH8S","_id":"r5XvsLj4EQZRwVan"}

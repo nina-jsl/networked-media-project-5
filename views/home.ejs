@@ -3,7 +3,7 @@
     <link rel="stylesheet" href="style.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
     <script src="dot.js"></script>
-    <script src="cursor.js"></script>
+    <!-- <script src="cursor.js"></script> -->
 
 </head>
 
@@ -67,15 +67,18 @@
     
            
 
-       
+            
 
         <div class="form-container" id="toggleDiv">
             <img src="../icon/cross-small.png" class="icon" id="cross">
-            <form class="post">
+            <form class="post" action="/upload" method="post">
                 <input type="text" name="text" placeholder="Say something..." class="post-info" />
                 <button type="submit" id="postButton">Post</button>
-                <!-- <input type="submit" name="submitbutton" value="Submit"/> -->
             </form>
+            <!-- <form class="post">
+                <input type="text" name="text" placeholder="Say something..." class="post-info" />
+                <button type="submit" id="postButton">Post</button>
+            </form> -->
         </div>
     </div>
 </body>

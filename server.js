@@ -154,12 +154,6 @@ app.post("/upload", upload.single("theimage"), (req, res) => {
     });
 });
 
-app.get('/music-player', (req, res) => {
-    res.render('music-player');
-});
-
-
-
 
 app.listen(2000, () => {
     console.log("server starts");
