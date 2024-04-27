@@ -15,8 +15,8 @@ window.onload = () => {
     const about = document.getElementById("about");
 
     function updateGlowPosition(glow) {
-        const maxX = 50;
-        const maxY = 50;
+        const maxX = 80;
+        const maxY = 80;
         const randomX = Math.random() * (2 * maxX) - maxX;
         const randomY = Math.random() * (maxY * 2) - maxY;
 
